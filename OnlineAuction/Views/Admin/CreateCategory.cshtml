@@ -1,0 +1,24 @@
+﻿@model OnlineAuction.Models.CategoryViewModel
+
+@{
+    ViewData["Title"] = "Create Category";
+}
+
+<div class="container">
+    <h2>Create Category</h2>
+
+    <form asp-action="CreateCategory" method="post">
+        <div class="form-group">
+            <label asp-for="CategoryName" class="control-label"></label>
+            <input asp-for="CategoryName" class="form-control" />
+            <span asp-validation-for="CategoryName" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create</button>
+        <a asp-action="Categories" class="btn btn-secondary">Back to List</a>
+    </form>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

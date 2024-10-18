@@ -1,0 +1,24 @@
+﻿@model OnlineAuction.Models.UserDeleteViewModel
+
+<h2>Delete User</h2>
+
+<div class="alert alert-warning">
+    Are you sure you want to delete this user?
+</div>
+
+<div class="container">
+    <form asp-action="DeleteUser" method="post">
+        <div class="form-group">
+            <label asp-for="UserName" class="control-label">Username</label>
+            <input asp-for="UserName" class="form-control" readonly />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email" class="control-label">Email</label>
+            <input asp-for="Email" class="form-control" readonly />
+        </div>
+
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-action="Users" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

@@ -1,0 +1,25 @@
+﻿@using OnlineAuction.Data
+@using OnlineAuction.Models
+@inject ApplicationDbContext Context
+
+@{
+    var categories = Context.Categories.OrderBy(c => c.CategoryName).ToList();
+}
+
+@if (categories != null && categories.Any())
+{
+    <ul class="navbar-nav w-100 overflow-hidden">
+        @foreach (var category in categories)
+        {
+            <li class="nav-item">
+                <a href="@Url.Action("CategoryProduct", "Home", new { categoryId = category.CategoryId })" class="nav-link">
+                    @category.CategoryName
+                </a>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p class="text-center">No categories available.</p>
+}

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<OnlineAuction.Models.Category>
+
+<div class="container">
+    <br /><br />
+<h2>Manage Categories</h2>
+
+<a asp-action="CreateCategory" class="btn btn-primary">Add New Category</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Category ID</th>
+            <th>Category Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td>@category.CategoryId</td>
+                <td>@category.CategoryName</td>
+                <td>
+                    <a asp-action="EditCategory" asp-route-id="@category.CategoryId" class="btn btn-warning">Edit</a>
+                    <a asp-action="DeleteCategory" asp-route-id="@category.CategoryId" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>

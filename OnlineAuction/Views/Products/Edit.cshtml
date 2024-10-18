@@ -1,0 +1,91 @@
+﻿@model OnlineAuction.Models.ProductViewModel
+
+@{
+    ViewBag.Title = "Edit Product";
+}
+<div class="container">
+    <br /><br />
+<h2>Edit Product</h2>
+
+<form asp-action="Edit" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <input type="hidden" asp-for="ProductId" />
+
+    <!-- Title -->
+    <div class="form-group">
+        <label asp-for="Title" class="control-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <!-- Description -->
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <!-- MinimumBid -->
+    <div class="form-group">
+        <label asp-for="MinimumBid" class="control-label"></label>
+        <input asp-for="MinimumBid" class="form-control" type="number" step="0.01" />
+        <span asp-validation-for="MinimumBid" class="text-danger"></span>
+    </div>
+
+    <!-- BidStartDate -->
+    <div class="form-group">
+        <label asp-for="BidStartDate" class="control-label"></label>
+        <input asp-for="BidStartDate" class="form-control" type="date" />
+        <span asp-validation-for="BidStartDate" class="text-danger"></span>
+    </div>
+
+    <!-- BidEndDate -->
+    <div class="form-group">
+        <label asp-for="BidEndDate" class="control-label"></label>
+        <input asp-for="BidEndDate" class="form-control" type="date" />
+        <span asp-validation-for="BidEndDate" class="text-danger"></span>
+    </div>
+
+    <!-- ImageFile -->
+    <div class="form-group">
+        <label asp-for="ImageFile" class="control-label">Upload Image</label>
+        <input asp-for="ImageFile" type="file" class="form-control" />
+        <span asp-validation-for="ImageFile" class="text-danger"></span>
+    </div>
+
+    <!-- DocumentFile -->
+    <div class="form-group">
+        <label asp-for="DocumentFile" class="control-label">Upload Document</label>
+        <input asp-for="DocumentFile" type="file" class="form-control" />
+        <span asp-validation-for="DocumentFile" class="text-danger"></span>
+    </div>
+
+    <!-- Category Dropdown -->
+    <div class="form-group">
+        <label asp-for="CategoryId" class="control-label"></label>
+        <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.Categories"></select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+
+    <!-- User Dropdown -->
+   @*  <div class="form-group">
+        <label asp-for="ApplicationUserId" class="control-label"></label>
+        <select asp-for="ApplicationUserId" class="form-control" asp-items="ViewBag.ApplicationUsers"></select>
+        <span asp-validation-for="ApplicationUserId" class="text-danger"></span>
+    </div> *@
+
+        <div class="form-group">
+            <label asp-for="ApplicationUserId" class="control-label"></label>
+            <input asp-for="ApplicationUserId" type="hidden" />
+            <p>@Model.ApplicationUserId</p> <!-- Display the user ID as plain text -->
+        </div>
+
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+</div>

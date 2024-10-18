@@ -1,0 +1,81 @@
+﻿@model OnlineAuction.Models.CategoryProductViewModel
+
+@{
+    ViewData["Title"] = $"{Model.CategoryName} Products";
+}
+
+<!-- Page Header Start -->
+<div class="container-fluid bg-secondary mb-5">
+    <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+        <h1 class="font-weight-semi-bold text-uppercase mb-3">@Model.CategoryName</h1>
+        <div class="d-inline-flex">
+            <p class="m-0"><a href="@Url.Action("Index", "Home")">Home</a></p>
+            <p class="m-0 px-2">-</p>
+            <p class="m-0">@Model.CategoryName</p>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Shop Start -->
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5">
+        <!-- Shop Sidebar Start -->
+        <div class="col-lg-3 col-md-12">
+            <!-- Price, Color, Size Filters (Optional) -->
+            <!-- You can keep or remove these filters based on your requirements -->
+            <!-- ... (Your existing filter code) ... -->
+        </div>
+        <!-- Shop Sidebar End -->
+        <!-- Shop Product Start -->
+        <div class="col-lg-9 col-md-12">
+            <div class="row pb-3">
+                <div class="col-12 pb-1">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h5 class="font-weight-semi-bold">Showing @Model.Products.Count() products</h5>
+                        <!-- You can add sorting options here if needed -->
+                    </div>
+                </div>
+
+                @if (Model.Products.Any())
+                {
+                    @foreach (var product in Model.Products)
+                    {
+                        <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
+                            <div class="card product-item border-0 mb-4">
+                                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0 fixed-image-container">
+                                    <img class="img-fluid fixed-image" src="@Url.Content("~/" + product.ImagePath)" alt="@product.Title">
+                                </div>
+                                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                    <h6 class="text-truncate mb-3">@product.Title</h6>
+                                    <div class="d-flex justify-content-center">
+                                        <h6>&#8360; @product.MinimumBid.ToString("F2")</h6>
+                                    </div>
+                                    @if (!string.IsNullOrEmpty(product.DocumentPath))
+                                    {
+                                        <p class="mt-2">
+                                            <a href="@Url.Content("~/" + product.DocumentPath)" target="_blank">View Document</a>
+                                        </p>
+                                    }
+                                </div>
+                                <div class="card-footer d-flex justify-content-between bg-light border">
+                                    <a href="@Url.Action("Details", "Products", new { id = product.ProductId })" class="btn btn-sm text-dark p-0">
+                                        <i class="fas fa-eye text-primary mr-1"></i>View Detail
+                                    </a>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="col-12">
+                        <p class="text-center">No products available in this category.</p>
+                    </div>
+                }
+            </div>
+        </div>
+        <!-- Shop Product End -->
+    </div>
+</div>
+<!-- Shop End -->

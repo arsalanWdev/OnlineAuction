@@ -1,0 +1,73 @@
+﻿@model IEnumerable<OnlineAuction.Models.Product>
+
+@{
+    ViewData["Title"] = "Product List";
+}
+
+<div class="container">
+    <br /><br />
+<h1>Product List</h1>
+
+<p>
+    <a asp-action="Create">Create New Product</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.First().Title)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Description)</th>
+            <th>@Html.DisplayNameFor(model => model.First().MinimumBid)</th>
+            <th>@Html.DisplayNameFor(model => model.First().BidStartDate)</th>
+            <th>@Html.DisplayNameFor(model => model.First().BidEndDate)</th>
+            <th>Image</th>
+            <th>Document</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                <td >@Html.DisplayFor(modelItem => item.Description)</td>
+                <td>@Html.DisplayFor(modelItem => item.MinimumBid)</td>
+                <td>@Html.DisplayFor(modelItem => item.BidStartDate)</td>
+                <td>@Html.DisplayFor(modelItem => item.BidEndDate)</td>
+
+                <!-- Image Display -->
+                <td>
+                    @if (!string.IsNullOrEmpty(item.ImagePath))
+                    {
+                        <img src="@Url.Content("~/" + item.ImagePath)" alt="Product Image" width="100" height="100" />
+                      
+                    }
+                    else
+                    {
+                        <span>No Image</span>
+                    }
+                </td>
+
+                <!-- Document Download Link -->
+                <td>
+                    @if (!string.IsNullOrEmpty(item.DocumentPath))
+                    {
+                        <a href="@Url.Content("~/" + item.DocumentPath)" download>Download Document</a>
+                      
+                    }
+                    else
+                    {
+                        <span>No Document</span>
+                    }
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+                        <a asp-action="Details" asp-route-id="@item.ProductId">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>

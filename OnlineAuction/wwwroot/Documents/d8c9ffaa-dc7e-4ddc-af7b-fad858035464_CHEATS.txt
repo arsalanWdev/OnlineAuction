@@ -1,0 +1,54 @@
+All heavy weapons: NUTTERTOOLS
+All light weapons: THUGSTOOLS
+Decrease Wanted Level: LEAVEMEALONE
+Full Armor: PRECIOUSPROTECTION
+Girls Carry Guns: CHICKSWITHGUNS
+Full Health: ASPIRINE
+Blow up nearby cars: BIGBANG
+Cars can fly: COMEFLYWITHME
+Cars can drive over water: SEAWAYS
+Aggressive Drivers: MIAMITRAFFIC
+All medium weapons: PROFESSIONALTOOLS
+Stormy Weather: CATSANDDOGS
+Sunny: ALOVELYDAY
+Dense Clouds: ABITDRIEG
+Light Clouds/clear: APLEASANTDAY
+Foggy Weather: CANTSEEATHING
+Play as Hilary King: ILOOKLIKEHILARY
+Play as Ken Rosenberg: MYSONISALAWYER
+Play as Lance Vance: LOOKLIKELANCE
+Play as Love Fist character (Dick): WELOVEOURDICK
+Play as Love Fist character (Jezz Torent): ROCKANDROLLMAN
+Play as Mercedes: FOXYLITTLETHING
+Play as Phil Cassidy: ONEARMEDBANDIT
+Play as Ricardo Diaz: CHEATSHAVEBEENCRACKED
+Play as Sonny Forelli: IDONTHAVETHEMONEYSONNY
+Change Skin/Clothes: STILLLIKEDRESSINGUP
+Makes Tommy fatter: DEEPFRIEDMARSBARS
+All cars turn black: IWANTITPAINTEDBLACK
+All cars turn pink: AHAIRDRESSERSCAR
+All traffic lights are green: GREENLIGHT
+Commit Suicide: ICANTTAKEITANYMORE
+Raise Wanted Level: AIRSHIP
+Fast boats can fly: ONSPEED
+Makes everything slower: BOOOOOORING
+Makes you smoke a cigarette: CERTAINDEATH
+Only the wheels of a car are visible: WHEELSAREALLINEED
+Pedestrians Carry Guns: OURGODGIVENRIGHTTOBEARARMS
+Pedestrians Hate You: NOBODYLIKESME
+Pedestrians Riot: FIGHTFIGHTFIGHT
+Perfect Handling: GRIPISEVERYTHING
+Shows Media Level: CHASESTAT
+Speed up game clock: LIFEISPASSINGMEBY
+Sportscars have big wheels: LOADSOFLITTLETHINGS
+Spawn a Bloodring Banger: TRAVELINSTYLE
+Spawn a Bloodring Banger 2: GETTHEREQUICKLY
+Spawn a Caddie: BETTERTHANWALKING
+Spawn a Hotring Racer: GETTHEREVERYFASTINDEED
+Spawn a Hotring Racer 2: GETTHEREAMAZINGLYFAST
+Spawn a Rhino : PANZER
+Spawn a Sabre Turbo: GETTHEREFAST
+Spawn a Romero’s Hearse: THELASTRIDE
+Spawn a Trashmaster: RUBBISHCAR
+Spawn Love Fist’s Limo: ROCKANDROLLCAR
+Spawn Helicopter: AMERICAHELICOPTER

@@ -1,0 +1,101 @@
+﻿@using System.Security.Claims
+@model OnlineAuction.Models.ProductViewModel
+
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <br /><br />
+<h1>Create</h1>
+
+<h4>Products</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create" asp-controller="Products" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <textarea asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="MinimumBid" class="control-label"></label>
+                <input asp-for="MinimumBid" type="number" step="0.01" class="form-control" />
+                <span asp-validation-for="MinimumBid" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ImageFile" class="control-label"></label>
+                <input asp-for="ImageFile" type="file" class="form-control" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DocumentFile" class="control-label"></label>
+                <input asp-for="DocumentFile" type="file" class="form-control" />
+                <span asp-validation-for="DocumentFile" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="BidStartDate" class="control-label"></label>
+                    <input asp-for="BidStartDate" type="date" class="form-control"  />
+                <span asp-validation-for="BidStartDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="BidEndDate" class="control-label"></label>
+                    <input asp-for="BidEndDate" type="date" class="form-control"  />
+                <span asp-validation-for="BidEndDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CategoryId" class="control-label"></label>
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.Categories"></select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+
+
+            @* <div class="form-group">
+                <label asp-for="ApplicationUserId" class="control-label"></label>
+                <select asp-for="ApplicationUserId" class="form-control" asp-items="ViewBag.ApplicationUsers"></select>
+                <span asp-validation-for="ApplicationUserId" class="text-danger"></span>
+            </div> *@
+
+                <div class="form-group">
+                    <!-- User ID (Read-Only / Hidden) -->
+                    <input asp-for="ApplicationUserId" type="hidden" value="@User.FindFirstValue(ClaimTypes.NameIdentifier)" />
+                </div>
+
+
+
+
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+       
+}
+</div>
